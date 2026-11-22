@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terrain Explorer | مستكشف التضاريس</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar"><div class="brand"><span class="brand-mark">⌁</span><div><strong>Terrain Explorer</strong><small>مستكشف الخرائط والتضاريس</small></div></div><div class="top-actions"><span class="status-dot"></span><span>خريطة تفاعلية</span></div></header>
+<main class="layout">
+<aside class="panel">
+<div class="intro"><span class="eyebrow">EXPLORE THE WORLD</span><h1>اكتشف المكان<br><em>من زاوية مختلفة</em></h1><p>استكشف المواقع والتضاريس والارتفاعات من خلال خريطة تفاعلية.</p></div>
+<form id="searchForm" class="search"><input id="searchInput" type="search" placeholder="ابحث عن مدينة أو مكان..." aria-label="ابحث عن مكان"><button aria-label="بحث">⌕</button></form>
+<div id="message" class="message" role="status">اكتب اسم مكان للبدء أو استخدم موقعك الحالي.</div>
+<div class="section-title">طبقات الخريطة <span>MAP LAYERS</span></div>
+<div class="layers">
+<button class="layer active" data-layer="street"><span class="layer-icon">▦</span><span><b>خريطة الشوارع</b><small>OpenStreetMap</small></span><i>✓</i></button>
+<button class="layer" data-layer="topo"><span class="layer-icon">⌁</span><span><b>التضاريس</b><small>OpenTopoMap</small></span><i>✓</i></button>
+<button class="layer" data-layer="satellite"><span class="layer-icon">▧</span><span><b>صور الأقمار</b><small>Esri imagery</small></span><i>✓</i></button>
+</div>
+<div class="section-title">معلومات الموقع <span>LOCATION DATA</span></div>
+<div class="data-card"><div><small>خط العرض</small><strong id="lat">—</strong></div><div><small>خط الطول</small><strong id="lon">—</strong></div><div class="wide"><small>الارتفاع التقريبي</small><strong id="elevation">—</strong></div></div>
+<button id="locateBtn" class="locate">◎ تحديد موقعي الحالي</button>
+<footer>الخرائط والبيانات مقدمة من مزودي خدمات مفتوحة. الارتفاع تقريبي.</footer>
+</aside>
+<section class="map-wrap"><div id="map" aria-label="الخريطة التفاعلية"></div><div class="map-badge"><span></span> LIVE MAP <b>·</b> مستكشف التضاريس</div><div class="map-coords" id="mapCoords">حرّك الخريطة لاستكشاف المنطقة</div><button id="zoomReset" class="reset" title="إعادة العرض">⌖</button></section>
+</main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script src="app.js"></script>
+</body></html>
